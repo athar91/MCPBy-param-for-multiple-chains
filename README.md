@@ -103,7 +103,7 @@ MCPBY MCPB.py -i input.in -s 4
 # 10 Merge files: Copy all *.mol2 (RESP charges) from MG1-MG4 folders into a single "merge" folder.
 Copy one of the PYK84_mcpby.frcmod files ( force constant and geometrical parameters).
 
-# 11 Final parameterisation of all metal units in all chains and metal units: 
+# 11 Final parameterisation of all metal units in all chains
 Now we have everything in merge folder, we will work on all the files in this folder.
 In PYK84_mcpby.pdb (copied and generated in step 7), we have ligands as Ap1,AP2,AP3,AP4 and similarly for MG1, PP and GU their correspodning atomtypes are availabel in mol2 files. check the correspondence of *.mol2 and .frcmod file and the coordinate.
 Prepare the system for simulation using tleap: load force field, define box size, and include other ligand (FBP) parameters. 
