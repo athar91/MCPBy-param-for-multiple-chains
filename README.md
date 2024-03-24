@@ -98,3 +98,8 @@ MCPB.py -i input.in -s 3
 MCPB.py -i input.in -s 4
 
 # load the correct forcefield in tleap and set the box, insert parameters for FBP and ready to generate the final PYK84_solv.inpcrd and PYK84_solv.prmtop files
+calculate the buffer ions according to the electrolyte concenetration of the simulation box. for me, system has -80 charge and i added these lines in tleap script.
+solvatebox protein OPCBOX 14
+addions protein Na+ 227
+addions protein Cl- 147
+ 
