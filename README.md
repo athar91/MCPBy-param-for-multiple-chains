@@ -1,7 +1,7 @@
 # MCPBy-param-for-multiple-chains
 Setting Up MCPBy Parameters for Pyruvate Kinase with Multiple Ligands and Metals
-This tutorial guides you through setting up MCPBy parameters for a Pyruvate Kinase system containing multiple ligands (PEP, FBP) and metal ions (Mg²⁺, K⁺).
-
+<br> This tutorial guides you through setting up MCPBy parameters for a Pyruvate Kinase system containing multiple ligands (PEP, FBP) and metal ions (Mg²⁺, K⁺).
+<br>
 Important Note: While some steps might seem unnecessary, they are crucial for successful parameter generation.
 
 # Software Used:
@@ -33,7 +33,7 @@ Open each ligand file (FBP_all.pdb, PEP_all.pdb) in Gaussian to check and potent
 # Merge and Renumber:
 
 Combine all prepared files into a single file named complex.pdb:
-
+<br>
 bash : cat protein_H.pdb FBP_all_H.pdb PEP_all_H.pdb MG_all.pdb > complex.pdb
 Use code with caution.
 content_copy
@@ -43,14 +43,14 @@ Bash
 pdb4amber -i complex.pdb -o complex_prep.pdb
 Use code with caution.
 content_copy
-
+<br>
 # Identify Metal Ion IDs and generate fake parameters:
 
 Use grep MG complex_prep.pdb to find the residue IDs for the Magnesium ions.
 Generate Initial Input File:
 original_pdb complex_prep.pdb
 
-
+<br>
 Create an input file (input.in) for MCPBy specifying the system details and metal ion IDs.
 group_name PYK84
 cut_off 2.8
