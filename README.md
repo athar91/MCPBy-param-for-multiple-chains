@@ -83,9 +83,11 @@ Step 4: DFT optimisation with tight convergence criteria optimization with frequ
 
 # MCPBY file generatio for the individual metal unit:
 After successfully able to complete optimisation and frequency calculation without any imaginary frequency, you are ready to go to next step.
+```
 MCPBY MCPB.py -i input.in -s 2
 MCPBY MCPB.py -i input.in -s 3
 MCPBY MCPB.py -i input.in -s 4
+```
 
 # Merge files: Copy all optimized molecule files (*.mol2) from MG1-MG4 folders into a single "merge" folder.
 Copy one of the PYK84_mcpby.frcmod files ( force constant and geometrical parameters).
