@@ -44,7 +44,7 @@ pdb4amber -i complex.pdb -o complex_prep.pdb
 Use code with caution.
 content_copy
 
-# Identify Metal Ion IDs:
+# Identify Metal Ion IDs and generate fake parameters:
 
 Use grep MG complex_prep.pdb to find the residue IDs for the Magnesium ions.
 Generate Initial Input File:
