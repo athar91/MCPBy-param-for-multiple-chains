@@ -118,7 +118,7 @@ Eventually you will have:
 PYK84_solv.inpcrd
 PYK84_solv.prmtop
 ```
-Calculate the buffer ions according to the electrolyte concenetration of the simulation box. for me, system has -80 charge and i added following lines in tleap script.
+Calculate the electrolyte buffer ions (0.10M) according to the simulation box. for me, system has -80 charge and i added following lines in tleap script.
 ```
 solvatebox protein OPCBOX 14
 addions protein Na+ 227
