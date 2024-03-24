@@ -14,14 +14,14 @@ Steps:
 Clean and minimize: Use Maestro or a similar tool to prepare the protein structure (FBP_PEP_8IAX.pdb). Assign protonation states at pH 7. Save the final complex without hydrogens (FBP_PEP_8IAX_prep_noh.pdb) using pdb4amber.
 
 # Extract Ligands and Protein:
-Extract FBP, PEP, and protein from the complex PDB file, resulting in four separate files:
-FBP_all.pdb
+Extract FBP, PEP, and protein from the complex PDB file, resulting in four separate files: <br>
+``` FBP_all.pdb
 PEP_all.pdb
-MG_all.pdb (Magnesium ion file)
-protein_noH.pdb (Protein without hydrogens)
+MG_all.pdb # (Magnesium ion file)
+protein_noH.pdb # (Protein without hydrogens)```
 
 # Add Hydrogens:
-Independently add hydrogens to each extracted file (except MG_all.pdb as metals don't have hydrogens) using pdb4amber:
+Independently add hydrogens to each extracted file (except MG_all.pdb as metals don't have hydrogens) using pdb4amber: <br>
 FBP_all_H.pdb
 PEP_all_H.pdb
 protein_H.pdb
@@ -52,21 +52,21 @@ original_pdb complex_prep.pdb
 
 <br>
 Create an input file (input.in) for MCPBy specifying the system details and metal ion IDs.
-group_name PYK84
+``` group_name PYK84
 cut_off 2.8
 ion_ids 31079 31080 31081 31082
 software_version g09
 ion_mol2files MG.mol2
 naa_mol2files PEP.mol2 HOH.mol2 FBP.mol2
-frcmod_files PEP.frcmod
-
+frcmod_files PEP.frcmod``` 
+<br>
 Run MCPBy (MCPB.py -i input.in -s 1) to generate a sample input file for further editing.
 Energy Minimization (simple SCF calculation) and Parameter Generation: these are not real parameters we are going to use.
 Stage 1: Run MCPBy with the sample input file (MCPB.py -i input.in -s 2) to perform energy minimization and generate initial parameter files.
 
 # Stage 2 (Repeat for MG1-MG4): these will be real parameters. 
 Create four directories named MG1, MG2, MG3, and MG4.
-Copy all files generated in Stage 1 into each directory (MG1-MG4).
+<br> Copy all files generated in Stage 1 into each directory (MG1-MG4).
 Edit the input.in file in each directory to specify a different metal ion (MG1, MG2, MG3, MG4) based on their IDs.
 Run MCPBy in each directory for parameter generation specific to each metal ion: MCPB.py -i input.in -s 1
 This will generate separate parameter files for each metal ion (PYK84_mcpby.pdb) in their respective folders.
