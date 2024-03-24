@@ -100,7 +100,7 @@ MCPBY MCPB.py -i input.in -s 3
 MCPBY MCPB.py -i input.in -s 4
 ```
 
-# 10 Merge files: Copy all optimized molecule files (*.mol2) from MG1-MG4 folders into a single "merge" folder.
+# 10 Merge files: Copy all *.mol2 (RESP charges) from MG1-MG4 folders into a single "merge" folder.
 Copy one of the PYK84_mcpby.frcmod files ( force constant and geometrical parameters).
 
 # 11 Final parameterisation of all metal units in all chains and metal units: 
