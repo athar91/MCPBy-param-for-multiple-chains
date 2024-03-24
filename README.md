@@ -15,10 +15,10 @@ Clean and minimize: Use Maestro or a similar tool to prepare the protein structu
 
 # Extract Ligands and Protein:
 Extract FBP, PEP, and protein from the complex PDB file, resulting in four separate files: <br>
-``` FBP_all.pdb
+FBP_all.pdb
 PEP_all.pdb
 MG_all.pdb # (Magnesium ion file)
-protein_noH.pdb # (Protein without hydrogens)```
+protein_noH.pdb # (Protein without hydrogens)
 
 # Add Hydrogens:
 Independently add hydrogens to each extracted file (except MG_all.pdb as metals don't have hydrogens) using pdb4amber: <br>
@@ -52,13 +52,13 @@ original_pdb complex_prep.pdb
 
 <br>
 Create an input file (input.in) for MCPBy specifying the system details and metal ion IDs.
-``` group_name PYK84
+( group_name PYK84
 cut_off 2.8
 ion_ids 31079 31080 31081 31082
 software_version g09
 ion_mol2files MG.mol2
 naa_mol2files PEP.mol2 HOH.mol2 FBP.mol2
-frcmod_files PEP.frcmod``` 
+frcmod_files PEP.frcmod )
 <br>
 Run MCPBy (MCPB.py -i input.in -s 1) to generate a sample input file for further editing.
 Energy Minimization (simple SCF calculation) and Parameter Generation: these are not real parameters we are going to use.
